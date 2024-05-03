@@ -20,13 +20,3 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
-    - name: Deploy to ArgoCD
-      uses: argoproj-labs/argocd-operator
-      with:
-        server: ${{ secrets.ARGOCD_SERVER }}
-        token: ${{ secrets.ARGOCD_TOKEN }}
-        namespace: 'your-argo-namespace'
-        application: 'your-application-name'
-        source: 'git::https://github.com/yourusername/your-repo.git'
-        sync-options: '--sync-policy=auto'
