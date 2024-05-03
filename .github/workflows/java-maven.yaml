@@ -22,7 +22,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Deploy to ArgoCD
-      uses: argoproj-labs/argocd-action@v2
+      uses: argoproj-labs/argocd-operator
       with:
         server: ${{ secrets.ARGOCD_SERVER }}
         token: ${{ secrets.ARGOCD_TOKEN }}
