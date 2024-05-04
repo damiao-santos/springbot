@@ -7,13 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @RestController
 public class SpringBootAppApplication {
 
-   @RequestMapping("/")
-   public String home() {
-       return "Hello Kubernetes!";
-   }
+	@RequestMapping("/")
+	public String home() {
+        return "Hello Kubernetes!";
+    }
 
-   public static void main(String[] args) {
-       SpringApplication.run(SpringBootAppApplication.class, args);
-   }
+    public static void main(String[] args) {
+       	 SpringApplication.run(SpringBootAppApplication.class, args);
+    }
 
 }
