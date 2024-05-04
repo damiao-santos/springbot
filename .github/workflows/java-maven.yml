@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    
+    - name: Use the docker key
+      run: echo ${{ secrets.DOCKER_USERNAME }}
 
     - name: Build Docker image
       run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ github.repository }}:latest .
