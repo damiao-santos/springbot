@@ -19,7 +19,7 @@ RUN mvn package -DskipTests
 # Final image
 FROM maven:3.8.4-openjdk-17-slim
 WORKDIR /app
-COPY --from=builder /app/target/your-app.jar .
+COPY --from=builder /app/target/Spring-boot-app.jar .
 
 # Command to run the application
-CMD ["java", "-jar", "your-app.jar"]
+CMD ["java", "-jar", "Spring-boot-app.jar"]
