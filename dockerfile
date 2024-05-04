@@ -14,7 +14,7 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 
 # Build the application
-RUN mvn package -DskipTests
+RUN mvn package -X -DskipTests
 
 # Final image
 FROM bellsoft/liberica-runtime-container:jre-17-stream-musl
