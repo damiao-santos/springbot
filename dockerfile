@@ -17,7 +17,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Final image
-FROM openjdk:17-jre-slim
+FROM maven:3.8.4-openjdk-17-slim
 WORKDIR /app
 COPY --from=builder /app/target/your-app.jar .
 
