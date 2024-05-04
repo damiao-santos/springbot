@@ -34,4 +34,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: damiao541/${{ github.repository }}:latest
+          tags: damiao541/springbot:latest
