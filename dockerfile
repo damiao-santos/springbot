@@ -19,7 +19,7 @@ RUN mvn package -DskipTests
 # Final image
 FROM bellsoft/liberica-runtime-container:jre-17-stream-musl
 WORKDIR /app
-COPY --from=builder /app/Spring-boot-app.jar /app
+COPY --from=builder /app/target/Spring-boot-app-0.0.1-SNAPSHOT.jar .
 
 # Command to run the application
 CMD ["java", "-jar", "Spring-boot-app.jar"]
