@@ -12,15 +12,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    
-    - name: Use the docker key
-      run: echo ${{ secrets.DOCKER_REPO }}
 
     - name: Build Docker image
-      run: docker build -t ${{ secrets.DOCKER_REPO }}/${{ github.repository }}:latest .
+      run: docker build -t damiao541/${{ github.repository }}:latest .
 
     - name: Log in to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Push Docker image to Docker Hub
-      run: docker push ${{ secrets.DOCKER_REPO }}/${{ github.repository }}:latest
+      run: docker push damiao541/${{ github.repository }}:latest
