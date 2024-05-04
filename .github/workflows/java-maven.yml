@@ -8,12 +8,9 @@ on:
 jobs:
   teste:
     runs-on: ubuntu-latest
-
+    name: teste
     steps:
-      - name: Checkout code
       - uses: actions/checkout@v4
-      
-      - name: set java
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
