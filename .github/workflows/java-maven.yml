@@ -23,7 +23,7 @@ jobs:
         run: mvn --batch-mode --update-snapshots verify
 
   build-and-push:
-    needs: test
+    needs: teste
     runs-on: ubuntu-latest
     outputs:
       sha: ${{ steps.short-sha.outputs.sha }} 
