@@ -8,7 +8,7 @@ image:
   repository: damiao541/springbot
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 9c02e61
+  tag: 4db3aed
 
 imagePullSecrets: []
 nameOverride: ""
@@ -53,7 +53,7 @@ ingress:
     - host: spring.teste.local
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
