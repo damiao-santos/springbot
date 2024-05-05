@@ -18,8 +18,8 @@ RUN mvn package -X -DskipTests
 
 # Final image
 FROM openjdk:17-alpine
-COPY --from=builder /app/target/Spring-boot-app-0.0.1-SNAPSHOT.jar /app/springbootapp.jar
+COPY --from=builder /app/target/Spring-boot-app-0.0.1-SNAPSHOT.jar /app/springboot-app.jar
 WORKDIR /app
 # Command to run the application
-CMD ["java", "-jar", "springbootapp.jar"]
+CMD ["java", "-jar", "springboot-app.jar"]
 
