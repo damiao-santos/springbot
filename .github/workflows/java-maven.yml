@@ -75,7 +75,7 @@ jobs:
       - name: Configure Git
         run: |
           git config user.name "GitHub Actions"
-          git config user.email "automatedactions@github.com"
+          git config user.email "automated-actions@github.com"
 
       - name: Update Deployment Image
         run: |
