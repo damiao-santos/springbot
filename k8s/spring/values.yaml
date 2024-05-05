@@ -8,7 +8,7 @@ image:
   repository: damiao541/springbot
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 181deca
+  tag: 3cb5d0d
 
 imagePullSecrets: []
 nameOverride: ""
@@ -41,7 +41,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
+  targetPort: 8080
 
 ingress:
   enabled: true
