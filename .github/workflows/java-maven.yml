@@ -103,4 +103,4 @@ jobs:
         run: |
           argocd app sync $ARGOCD_APP_NAME
         env:
-          ARGOCD_APP_NAME: currencyconverter-production
+          ARGOCD_APP_NAME: springboot
