@@ -9,6 +9,23 @@ env:
   DOCKER_IMAGE: ${{ secrets.DOCKER_REPO }}/${{ secrets.DOCKER_REPOIMAGE }}
 
 jobs:
+  sast:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run SAST Scan
+      uses: AppThreat/sast-scan-action@master
+      with:
+        type: "java"
+
+    - name: Upload SAST Scan Reports
+      uses: actions/upload-artifact@v1
+      with:
+        name: reports
+        path: reports
   teste:
     runs-on: ubuntu-latest
     name: teste
