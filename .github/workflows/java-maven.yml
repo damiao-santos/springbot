@@ -27,6 +27,7 @@ jobs:
         name: reports
         path: reports
   teste:
+    needs: sast
     runs-on: ubuntu-latest
     name: teste
     steps:
