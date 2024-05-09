@@ -16,12 +16,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Run SAST Scan
+    - name: Run SAST-Scan
       uses: AppThreat/sast-scan-action@master
       with:
         type: "java"
 
-    - name: Upload SAST Scan Reports
+    - name: Upload SAST-Scan Reports
       uses: actions/upload-artifact@v1
       with:
         name: reports
