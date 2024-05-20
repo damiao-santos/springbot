@@ -17,10 +17,10 @@ jobs:
     - uses: hadolint/hadolint-action@v3.1.0
       with:
         dockerfile: Dockerfile
-        verbose: true
+        verbose: True
         format: json
         failure-threshold: warning
-        no-color: false
+        no-color: False
   sast:
     runs-on: ubuntu-latest
 
