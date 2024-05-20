@@ -20,7 +20,7 @@ jobs:
         verbose: True
         format: json
         failure-threshold: warning
-        no-color: False
+        no-color: True
   sast:
     runs-on: ubuntu-latest
 
