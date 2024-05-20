@@ -17,6 +17,8 @@ jobs:
     - uses: hadolint/hadolint-action@v3.1.0
       with:
         dockerfile: Dockerfile
+        verbose: true
+        format: json
   sast:
     runs-on: ubuntu-latest
 
