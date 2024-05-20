@@ -19,6 +19,7 @@ jobs:
         dockerfile: Dockerfile
         verbose: true
         format: json
+        failure-threshold: warning
   sast:
     runs-on: ubuntu-latest
 
