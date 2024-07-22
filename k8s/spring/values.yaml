@@ -8,7 +8,7 @@ image:
   repository: damiao541/springbot
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 7e6d518
+  tag: 346db17
 
 imagePullSecrets: []
 nameOverride: ""
