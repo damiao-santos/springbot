@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+    paths:
+      - "*"
+      - "!.github/*"
+
+
 env:
   DOCKER_IMAGE: ${{ secrets.DOCKER_REPO }}/${{ secrets.DOCKER_REPOIMAGE }}
 
