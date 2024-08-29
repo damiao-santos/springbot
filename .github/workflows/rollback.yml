@@ -1,0 +1,27 @@
+name: Revert Previous Commit
+
+on:
+  workflow_dispatch:  # O rollback é acionado manualmente
+
+jobs:
+  revert_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+    - name: Get previous commit ID
+      id: prev-commit
+      run: echo "::set-output name=commit_id::$(git rev-parse HEAD~1)"
+
+    - name: Revert previous commit
+      run: |
+        git revert --no-commit ${{ steps.prev-commit.outputs.commit_id }}
+        git commit -m "Reverting commit ${{ steps.prev-commit.outputs.commit_id }}"
+        git push origin HEAD
