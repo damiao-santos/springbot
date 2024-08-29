@@ -11,7 +11,7 @@ public class SpringBootAppApplication {
 
 	@RequestMapping("/")
 	public String home() {
-        return "Hello Kubernetes to you all of the world!";
+        return "Hello Kubernetes to you all of the world!334";
     }
 
     public static void main(String[] args) {
