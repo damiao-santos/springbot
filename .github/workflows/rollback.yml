@@ -10,6 +10,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Clona todo o histórico do repositório
 
     - name: Set up Git
       run: |
@@ -18,10 +20,10 @@ jobs:
 
     - name: Get previous commit ID
       id: prev-commit
-      run: echo "::set-output name=commit_id::$(git rev-parse HEAD~1)"
+      run: echo "commit_id=$(git rev-parse HEAD~1)" >> $GITHUB_ENV
 
     - name: Revert previous commit
       run: |
-        git revert --no-commit ${{ steps.prev-commit.outputs.commit_id }}
-        git commit -m "Reverting commit ${{ steps.prev-commit.outputs.commit_id }}"
+        git revert --no-commit ${{ env.commit_id }}
+        git commit -m "Reverting commit ${{ env.commit_id }}"
         git push origin HEAD
